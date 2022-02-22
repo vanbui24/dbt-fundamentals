@@ -2,11 +2,12 @@ version: 2
 
 sources:
   - name: jaffle_shop
+    description: A clone of a Postgres appication database
     database: raw
     schema: jaffle_shop
     tables:
       - name: customers
-        description: Raw customer data
+        description: Raw customers data
         columns: 
         - name: id
           description: Primary key for customers
