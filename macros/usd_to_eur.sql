@@ -1,5 +1,5 @@
-{% macro usd_to_eur(column_name, decimal_places=2) -%}
+{% macro usd_to_eur(column_name) -%}
 
-round( 0.89 * {{ column_name }} / 100, {{ decimal_places }})
+{{ column_name }} * 0.89 /100
 
 {%- endmacro %}
