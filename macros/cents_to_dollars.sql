@@ -3,4 +3,3 @@
 round( 1.0 * {{ column_name }} / 100, {{ decimal_places }})
 
 {%- endmacro %}
-
