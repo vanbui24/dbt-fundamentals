@@ -18,7 +18,7 @@ Year of Birth
 
 {% docs citibike__trips__GENDER %}
 
-Gender (Zero=unknown; 1=male; 2=female)
+Gender (0=unknown; 1=male; 2=female)
 
 {% enddocs %}
 
