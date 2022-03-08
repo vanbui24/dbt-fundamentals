@@ -2,27 +2,32 @@ version: 2
 
 models:
   - name: stg__customers
-    description: One unique customer per row
+    description: '{{ doc("jaffle_shop__stg__customers")}}'
     columns: 
       - name: customer_id
-        description: Primary key for stg__customers
+        description: '{{ doc("jaffle_shop__stg__customers__customer_id")}}'
         tests:
           - unique
           - not_null
       - name: first_name
-        description: Customer's first name
+        description: '{{ doc("jaffle_shop__stg__customers__first_name")}}' 
+      - name: last_name
+        description: '{{ doc("jaffle_shop__stg__customers__last_name")}}' 
+
 
   - name: stg__orders
     columns:
       - name: order_id
-        description: Order id
+        description: '{{ doc("jaffle_shop__stg__orders__order_id")}}'
         tests:
           - unique
           - not_null
+      - name: customer_id
+        description: '{{ doc("jaffle_shop__stg__orders__customer_id")}}'
       - name: order_date
-        description: '{{ doc("order_date")}}'
+        description: '{{ doc("jaffle_shop__stg__orders__order_date")}}'
       - name: status 
-        description: '{{ doc("order_status")}}'
+        description: '{{ doc("jaffle_shop__stg__orders__status")}}'
         tests:
           - accepted_values:
               values:

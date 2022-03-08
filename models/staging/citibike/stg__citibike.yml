@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: stg__citibike
+    description: '{{ doc("citibike__stg__citibike")}}'
+    columns: 
+      - name: bike_id
+        description: '{{ doc("citibike__stg__citibike__bike_id")}}'
+      - name: BIRTH_YEAR
+        description: '{{ doc("citibike__stg__citibike__BIRTH_YEAR")}}'
+      - name: sex
+        description: '{{ doc("citibike__stg__citibike__sex")}}'
+      - name: MEMBERSHIP_TYPE
+        description: '{{ doc("citibike__stg__citibike__MEMBERSHIP_TYPE")}}'
+      - name: user_type
+        description: '{{ doc("citibike__stg__citibike__user_type")}}'
+      - name: start_time
+        description: '{{ doc("citibike__stg__citibike__start_time")}}'
+      - name: START_STATION_ID
+        description: '{{ doc("citibike__stg__citibike__START_STATION_ID")}}'
+      - name: START_STATION_NAME
+        description: '{{ doc("citibike__stg__citibike__START_STATION_NAME")}}'
+      - name: START_STATION_LATITUDE
+        description: '{{ doc("citibike__stg__citibike__START_STATION_LATITUDE")}}'
+      - name: START_STATION_LONGITUDE
+        description: '{{ doc("citibike__stg__citibike__START_STATION_LONGITUDE")}}'
+      - name: end_time
+        description: '{{ doc("citibike__stg__citibike__end_time")}}'
+      - name: END_STATION_ID
+        description: '{{ doc("citibike__stg__citibike__END_STATION_ID")}}'
+      - name: END_STATION_NAME
+        description: '{{ doc("citibike__stg__citibike__END_STATION_NAME")}}'
+      - name: END_STATION_LATITUDE
+        description: '{{ doc("citibike__stg__citibike__END_STATION_LATITUDE")}}'
+      - name: END_STATION_LONGITUDE
+        description: '{{ doc("citibike__stg__citibike__END_STATION_LONGITUDE")}}'
+      - name: trip_duration
+        description: '{{ doc("citibike__stg__citibike__trip_duration")}}'

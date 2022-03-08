@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: weather
+    database: weather
+    schema: public
+    tables:
+      - name: json_weather_data
+        description: '{{ doc("weather__json_weather_data")}}'
