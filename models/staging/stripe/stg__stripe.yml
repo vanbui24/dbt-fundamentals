@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: stg__payments
+    description: '{{ doc("stripe__stg__payments")}}'
+    columns: 
+      - name: order_id
+        description: '{{ doc("stripe__stg__payments__order_id")}}'
+      - name: payment_method
+        description: '{{ doc("stripe__stg__payments__payment_method")}}' 
+      - name: status
+        description: '{{ doc("stripe__stg__payments__status")}}'
+      - name: usd_amount
+        description: '{{ doc("stripe__stg__payments__usd_amount")}}' 
+      - name: eur_amount
+        description: '{{ doc("stripe__stg__payments__eur_amount")}}'
+
+
+  - name: stg__eur_payments
+    description: '{{ doc("stripe__stg__eur_payments")}}'
+    columns: 
+      - name: order_id
+        description: '{{ doc("stripe__stg__eur_payments__order_id")}}'
+      - name: payment_method
+        description: '{{ doc("stripe__stg__eur_payments__payment_method")}}' 
+      - name: status
+        description: '{{ doc("stripe__stg__eur_payments__status")}}' 
+      - name: amount
+        description: '{{ doc("stripe__stg__eur_payments__amount")}}' 

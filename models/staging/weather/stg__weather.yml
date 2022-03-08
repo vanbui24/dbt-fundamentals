@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: stg__weather
+    description: '{{ doc("weather__stg__weather")}}'
+    columns: 
+      - name: observation_time
+        description: '{{ doc("weather__stg__weather__observation_time")}}'
+      - name: city_id
+        description: '{{ doc("weather__stg__weather__city_id")}}' 
+      - name: city_name
+        description: '{{ doc("weather__stg__weather__city_name")}}'
+      - name: country
+        description: '{{ doc("weather__stg__weather__country")}}' 
+      - name: city_lat
+        description: '{{ doc("weather__stg__weather__city_lat")}}'
+      - name: city_lon
+        description: '{{ doc("weather__stg__weather__city_lon")}}'
+      - name: clouds
+        description: '{{ doc("weather__stg__weather__clouds")}}' 
+      - name: temp_avg
+        description: '{{ doc("weather__stg__weather__temp_avg")}}'
+      - name: temp_min
+        description: '{{ doc("weather__stg__weather__temp_min")}}' 
+      - name: temp_max
+        description: '{{ doc("weather__stg__weather__temp_max")}}'
+      - name: weather
+        description: '{{ doc("weather__stg__weather__weather")}}'
+      - name: weather_desc
+        description: '{{ doc("weather__stg__weather__weather_desc")}}' 
+      - name: weather_icon
+        description: '{{ doc("weather__stg__weather__weather_icon")}}'
+      - name: wind_dir
+        description: '{{ doc("weather__stg__weather__wind_dir")}}'
+      - name: wind_speed
+        description: '{{ doc("weather__stg__weather__wind_speed")}}'
+

@@ -2,24 +2,37 @@ version: 2
 
 sources:
   - name: jaffle_shop
-    description: A clone of a Postgres appication database
+    description: '{{ doc("jaffle_shop")}}'
     database: raw
     schema: jaffle_shop
     tables:
       - name: customers
-        description: Raw customers data
+        description: '{{ doc("jaffle_shop__customers")}}'
         columns: 
         - name: id
-          description: Primary key for customers
+          description: '{{ doc("jaffle_shop__customers__id")}}' 
           tests:
             - unique
             - not_null
+        - name: FIRST_NAME
+          description: '{{ doc("jaffle_shop__customers__FIRST_NAME")}}' 
+        - name: LAST_NAME
+          description: '{{ doc("jaffle_shop__customers__LAST_NAME")}}' 
+
 
       - name: orders
-        description: Raw orders data
+        description: '{{ doc("jaffle_shop__orders")}}' 
         columns: 
         - name: id
-          description: Primary key for orders
+          description: '{{ doc("jaffle_shop__orders__id")}}'
           tests:
             - unique
             - not_null
+        - name: USER_ID
+          description: '{{ doc("jaffle_shop__orders__USER_ID")}}' 
+        - name: ORDER_DATE
+          description: '{{ doc("jaffle_shop__orders__ORDER_DATE")}}'
+        - name: STATUS
+          description: '{{ doc("jaffle_shop__orders__STATUS")}}'
+        - name: _ETL_LOADED_AT
+          description: '{{ doc("jaffle_shop__orders___ETL_LOADED_AT")}}' 

@@ -2,7 +2,24 @@ version: 2
 
 sources:
   - name: stripe
+    description: '{{ doc("stripe")}}'
     database: raw
     schema: stripe
     tables:
       - name: payment
+        description: '{{ doc("stripe__payment")}}'
+        columns: 
+        - name: ID
+          description: '{{ doc("stripe__payment__ID")}}' 
+        - name: ORDERID
+          description: '{{ doc("stripe__payment__ORDERID")}}' 
+        - name: PAYMENTMETHOD
+          description: '{{ doc("stripe__payment__PAYMENTMETHOD")}}'
+        - name: STATUS
+          description: '{{ doc("stripe__payment__STATUS")}}'
+        - name: AMOUNT
+          description: '{{ doc("stripe__payment__AMOUNT")}}' 
+        - name: CREATED
+          description: '{{ doc("stripe__payment__CREATED")}}'
+        - name: _BATCHED_AT
+          description: '{{ doc("stripe__payment___BATCHED_AT")}}' 
