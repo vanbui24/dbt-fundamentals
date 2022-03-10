@@ -6,6 +6,8 @@ models:
     columns: 
       - name: bike_id
         description: '{{ doc("citibike__stg__citibike__bike_id")}}'
+        tests:
+            - not_null
       - name: BIRTH_YEAR
         description: '{{ doc("citibike__stg__citibike__BIRTH_YEAR")}}'
       - name: sex
@@ -43,3 +45,5 @@ models:
         description: '{{ doc("citibike__stg__citibike__END_STATION_LONGITUDE")}}'
       - name: trip_duration
         description: '{{ doc("citibike__stg__citibike__trip_duration")}}'
+        tests:
+          - not_null
