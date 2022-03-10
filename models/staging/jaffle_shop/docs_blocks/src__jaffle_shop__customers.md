@@ -1,6 +1,6 @@
 {% docs jaffle_shop__customers %}
 
-Raw customers data
+Raw customers Data
 
 {% enddocs %}
 
