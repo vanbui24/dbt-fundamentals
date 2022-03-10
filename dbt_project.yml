@@ -36,14 +36,14 @@ models:
     # Applies to all files under models/citibike/
     mart:
       core:
-          materialized: table
+        materialized: table
     staging:
       materialized: view
   jaffle_shop:
     # Applies to all files under models/jaffle_shop/
     mart:
       core:
-          materialized: table
+        materialized: table
     staging:
       materialized: view
       
