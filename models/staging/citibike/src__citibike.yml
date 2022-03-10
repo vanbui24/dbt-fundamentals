@@ -10,26 +10,47 @@ sources:
         columns: 
         - name: BIKEID
           description: '{{ doc("citibike__trips__BIKEID")}}'
+          tests:
+            - not_null
         - name: BIRTH_YEAR
           description: '{{ doc("citibike__trips__BIRTH_YEAR")}}'
         - name: GENDER
           description: '{{ doc("citibike__trips__GENDER")}}'
+          tests:
+            - not_null
+            - accepted_values:
+                values:
+                  - 0
+                  - 1
+                  - 2
         - name: MEMBERSHIP_TYPE
           description: '{{ doc("citibike__trips__MEMBERSHIP_TYPE")}}'
         - name: USERTYPE
           description: '{{ doc("citibike__trips__USERTYPE")}}'
         - name: STARTTIME
           description: '{{ doc("citibike__trips__STARTTIME")}}'
+          tests:
+            - not_null
         - name: START_STATION_ID
           description: '{{ doc("citibike__trips__START_STATION_ID")}}'
+          tests:
+            - not_null
         - name: START_STATION_NAME
           description: '{{ doc("citibike__trips__START_STATION_NAME")}}'
+          tests:
+            - not_null
         - name: START_STATION_LATITUDE
           description: '{{ doc("citibike__trips__START_STATION_LATITUDE")}}'
+          tests:
+            - not_null
         - name: START_STATION_LONGITUDE
           description: '{{ doc("citibike__trips__START_STATION_LONGITUDE")}}'
+          tests:
+            - not_null
         - name: STOPTIME
           description: '{{ doc("citibike__trips__STOPTIME")}}'
+          tests:
+            - not_null
         - name: END_STATION_ID
           description: '{{ doc("citibike__trips__END_STATION_ID")}}'
         - name: END_STATION_NAME
@@ -40,5 +61,7 @@ sources:
           description: '{{ doc("citibike__trips__END_STATION_LONGITUDE")}}'
         - name: TRIPDURATION
           description: '{{ doc("citibike__trips__TRIPDURATION")}}'
+          tests:
+            - not_null
 
 

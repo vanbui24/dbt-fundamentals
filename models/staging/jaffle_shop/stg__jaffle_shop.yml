@@ -10,9 +10,13 @@ models:
           - unique
           - not_null
       - name: first_name
-        description: '{{ doc("jaffle_shop__stg__customers__first_name")}}' 
+        description: '{{ doc("jaffle_shop__stg__customers__first_name")}}'
+        tests:
+          - not_null
       - name: last_name
-        description: '{{ doc("jaffle_shop__stg__customers__last_name")}}' 
+        description: '{{ doc("jaffle_shop__stg__customers__last_name")}}'
+        tests:
+          - not_null
 
 
   - name: stg__orders
@@ -24,8 +28,12 @@ models:
           - not_null
       - name: customer_id
         description: '{{ doc("jaffle_shop__stg__orders__customer_id")}}'
+        tests:
+          - not_null
       - name: order_date
         description: '{{ doc("jaffle_shop__stg__orders__order_date")}}'
+        tests:
+          - not_null
       - name: status 
         description: '{{ doc("jaffle_shop__stg__orders__status")}}'
         tests:

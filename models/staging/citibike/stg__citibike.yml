@@ -10,6 +10,13 @@ models:
         description: '{{ doc("citibike__stg__citibike__BIRTH_YEAR")}}'
       - name: sex
         description: '{{ doc("citibike__stg__citibike__sex")}}'
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - 0
+                - 1
+                - 2
       - name: MEMBERSHIP_TYPE
         description: '{{ doc("citibike__stg__citibike__MEMBERSHIP_TYPE")}}'
       - name: user_type

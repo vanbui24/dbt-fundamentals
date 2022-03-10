@@ -33,9 +33,22 @@ sources:
             - not_null
         - name: USER_ID
           description: '{{ doc("jaffle_shop__orders__USER_ID")}}' 
+          tests:
+            - not_null
         - name: ORDER_DATE
           description: '{{ doc("jaffle_shop__orders__ORDER_DATE")}}'
+          tests:
+            - not_null
         - name: STATUS
           description: '{{ doc("jaffle_shop__orders__STATUS")}}'
+          tests:
+            - not_null
+            - accepted_values:
+                values:
+                  - completed
+                  - shipped
+                  - returned
+                  - return_pending
+                  - placed
         - name: _ETL_LOADED_AT
           description: '{{ doc("jaffle_shop__orders___ETL_LOADED_AT")}}' 
