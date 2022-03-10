@@ -16,9 +16,12 @@ sources:
             - not_null
         - name: FIRST_NAME
           description: '{{ doc("jaffle_shop__customers__FIRST_NAME")}}' 
+          tests:
+            - not_null
         - name: LAST_NAME
           description: '{{ doc("jaffle_shop__customers__LAST_NAME")}}' 
-
+          tests:
+            - not_null
 
       - name: orders
         description: '{{ doc("jaffle_shop__orders")}}' 
