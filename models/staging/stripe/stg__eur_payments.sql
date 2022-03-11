@@ -5,3 +5,4 @@ select
     {{ cents_to_dollar('amount', 3) }} as amount
 
 from {{ source('stripe', 'payment')}}
+where status = 'success'

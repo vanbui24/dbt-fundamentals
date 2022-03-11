@@ -1,3 +1,9 @@
+{% docs jaffle_shop__stg__orders %}
+
+All orders
+
+{% enddocs %}
+
 {% docs jaffle_shop__stg__orders__order_id %}
 
 Order ID

@@ -9,4 +9,5 @@
     round( 1.0 * amount / 100, 3) as amount
 
 from raw.stripe.payment
+where status = 'success'
   );

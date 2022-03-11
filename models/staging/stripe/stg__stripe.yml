@@ -6,14 +6,31 @@ models:
     columns: 
       - name: order_id
         description: '{{ doc("stripe__stg__payments__order_id")}}'
+        tests:
+          - not_null
       - name: payment_method
         description: '{{ doc("stripe__stg__payments__payment_method")}}' 
+        tests:
+          - accepted_values:
+              values:
+                - credit_card 
+                - coupon
+                - bank_transfer
+                - gift_card
       - name: status
         description: '{{ doc("stripe__stg__payments__status")}}'
+        tests:
+          - not_null
       - name: usd_amount
         description: '{{ doc("stripe__stg__payments__usd_amount")}}' 
+        tests:
+          - not_null
       - name: eur_amount
         description: '{{ doc("stripe__stg__payments__eur_amount")}}'
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: '<= usd_amount'
+              condition: eur_amount <= usd_amount
 
 
   - name: stg__eur_payments
@@ -21,9 +38,20 @@ models:
     columns: 
       - name: order_id
         description: '{{ doc("stripe__stg__eur_payments__order_id")}}'
+        tests:
+          - not_null
       - name: payment_method
-        description: '{{ doc("stripe__stg__eur_payments__payment_method")}}' 
+        description: '{{ doc("stripe__stg__eur_payments__payment_method")}}'
+        tests:
+          - accepted_values:
+              values:
+                - credit_card 
+                - coupon
+                - bank_transfer
+                - gift_card 
       - name: status
         description: '{{ doc("stripe__stg__eur_payments__status")}}' 
       - name: amount
-        description: '{{ doc("stripe__stg__eur_payments__amount")}}' 
+        description: '{{ doc("stripe__stg__eur_payments__amount")}}'
+        tests:
+          - not_null

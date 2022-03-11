@@ -20,6 +20,7 @@ models:
 
 
   - name: stg__orders
+    description: '{{ doc("jaffle_shop__stg__orders")}}'
     columns:
       - name: order_id
         description: '{{ doc("jaffle_shop__stg__orders__order_id")}}'

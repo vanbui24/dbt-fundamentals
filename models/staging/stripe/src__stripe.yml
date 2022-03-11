@@ -10,16 +10,34 @@ sources:
         description: '{{ doc("stripe__payment")}}'
         columns: 
         - name: ID
-          description: '{{ doc("stripe__payment__ID")}}' 
+          description: '{{ doc("stripe__payment__ID")}}'
+          tests:
+          - not_null
+          - unique
         - name: ORDERID
-          description: '{{ doc("stripe__payment__ORDERID")}}' 
+          description: '{{ doc("stripe__payment__ORDERID")}}'
+          tests:
+          - not_null
         - name: PAYMENTMETHOD
           description: '{{ doc("stripe__payment__PAYMENTMETHOD")}}'
+          tests:
+            - accepted_values:
+                values:
+                  - credit_card 
+                  - coupon
+                  - bank_transfer
+                  - gift_card
         - name: STATUS
           description: '{{ doc("stripe__payment__STATUS")}}'
         - name: AMOUNT
-          description: '{{ doc("stripe__payment__AMOUNT")}}' 
+          description: '{{ doc("stripe__payment__AMOUNT")}}'
+          tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
         - name: CREATED
           description: '{{ doc("stripe__payment__CREATED")}}'
+          tests:
+          - dbt_utils.accepted_range:
+              max_value: "getdate()"
         - name: _BATCHED_AT
           description: '{{ doc("stripe__payment___BATCHED_AT")}}' 
