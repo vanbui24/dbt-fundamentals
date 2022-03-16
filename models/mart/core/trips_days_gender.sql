@@ -4,22 +4,20 @@ with citibike as (
 
 ),
 
-# stacked barchart (gender/sex)
-# number of trips Y-axis
-# day of the week X-axis (monday to sunday )
-#  
 
-select 
-  membership_type,
-  count(*) as number_of_trips
-  
-from {{ ref('stg__citibike') }}
-where membership_type is not null
-group by membership_type 
-order by 2 desc
+final as (
 
-select
+    select
+        
+        dayofweek(start_time) as day_of_week,
+        sex,
+        count(*) as number_of_trips
 
-  date_trunc('day', start_time)
+    from citibike
+    group by 1, 2
+    order by 1, 2
 
-from {{ ref('stg__citibike') }}
+)
+
+select * from final
+
