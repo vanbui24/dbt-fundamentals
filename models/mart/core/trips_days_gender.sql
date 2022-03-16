@@ -1,3 +1,5 @@
+-- number of trisp by day of the week and gender
+
 with citibike as (
     
     select * from {{ ref('stg__citibike') }}

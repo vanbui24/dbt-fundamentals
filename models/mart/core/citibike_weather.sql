@@ -1,3 +1,5 @@
+-- number of trips group by weather conditions 
+
 with citibike as (
     
     select * from {{ ref('stg__citibike') }}

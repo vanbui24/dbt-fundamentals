@@ -1,3 +1,5 @@
+-- data for map, coloured bubble size indicates number of trips (start), filter: station name, size, weather 
+
 with citibike as (
     
     select * from {{ ref('stg__citibike') }}
